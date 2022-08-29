@@ -8,6 +8,7 @@ const convertAsync = promisify(convert);
 
 const main = async () => {
   try {
+    console.log('Searching Files to Convert...');
     const dirs = ls('-RA', process.cwd());
 
     for (const entry of dirs) {
@@ -19,6 +20,9 @@ const main = async () => {
         await docxToPdf(entry, join(oudDir, `${parsed.name}.pdf`));
       }
     }
+
+    console.log('All Documents are Converted.');
+    console.log('Have Fun!');
   } catch (error) {
     console.error('Error Converting Files...');
     console.error(error);
