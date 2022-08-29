@@ -1,0 +1,6 @@
+*.docx
+*.pdf
+test
+node_modules
+dist
+doc2pdf.exe
